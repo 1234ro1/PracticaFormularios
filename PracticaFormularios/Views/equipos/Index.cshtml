@@ -1,0 +1,88 @@
+﻿<div>
+    <h1>Mantenimiento de equipos</h1>
+</div>
+
+@* inicio formulario*@
+<form asp-action="crearRegistro">
+    <div class="form-group">
+        <div class="row mb-4">
+            <div class="col-sm-2">
+                @Html.Label("lblNombre", "Nombre")
+            </div>
+            <div class=" col-sm-4">
+                @Html.TextBox("nombre","", new {@class="form-control"})
+            </div>
+            <div class="col-sm-2">
+                @Html.Label("lblDescripcion", "Descrpcion")
+            </div>
+            <div class=" col-sm-4">
+                @Html.TextArea("descripcion","", new {@class="form-control"})
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-sm-2">
+                @Html.Label("lblNombre", "Tipo Equipo")
+            </div>
+            <div class=" col-sm-4">
+                @Html.DropDownList("tipo_equipo_id",ViewData["listadoTipoEquipos"] as SelectList, new {@class="form-control"})
+            </div>
+        </div>
+
+        <div class="row mb-4">
+
+            <div class="col-sm-2">
+                @Html.Label("lblMarca", "Marca")
+            </div>
+            <div class=" col-sm-4">
+                @Html.DropDownList("marca",ViewData["listadoDeMarcas"] as SelectList,"elija",new {@class="form-control"})
+            </div>
+            <div class="col-sm-2">
+                @Html.Label("lblModelo", "Modelo")
+            </div>
+            <div class=" col-sm-4">
+                @Html.TextBox("modelo","", new {@class="form-control"})
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-sm-2">
+                @Html.Label("lblAnioCompra", "ano Compra")
+            </div>
+            <div class=" col-sm-4">
+                @Html.TextBox("anio_compra","", new {@class="form-control"})
+            </div>
+            <div class="col-sm-2">
+                @Html.Label("lblCosto", "Costo")
+            </div>
+            <div class=" col-sm-4">
+                @Html.TextBox("costo","", new {@class="form-control"})
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-sm-2">
+                @Html.Label("lblVidaUtil", "Vida Util")
+            </div>
+            <div class=" col-sm-4">
+                @Html.TextBox("vida_util","", new {@class="form-control"})
+            </div>
+            <div class="col-sm-2">
+                @Html.Label("lblEstadoEquipo", "Estado del Equipo")
+            </div>
+            <div class=" col-sm-4">
+                @Html.DropDownList("estado_equipo",ViewData["listadoEstadosEquipo"] as SelectList,"elija", new {@class="form-control"})
+            </div>
+
+
+            <div class="row mb-4">
+                <div class="col-sm-2">
+                </div>
+                <div class=" col-sm-4">
+                </div>
+                <div class="col-sm-2">
+                    <input type="submit" class="btn btn-success text-center btn-lg"/>
+                </div>
+                <div class=" col-sm-4">
+                </div>
+
+    </div>
+</form>
